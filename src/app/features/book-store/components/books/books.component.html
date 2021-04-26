@@ -1,0 +1,11 @@
+<div class="card"
+     *ngFor="let book of books$ | async">
+  <div class="card-header">
+    <div class="card-title">
+      {{ book.title }}
+    </div>
+  </div>
+  <div class="card-footer">
+    <a class="card-link">See Author Information</a>
+  </div>
+</div>

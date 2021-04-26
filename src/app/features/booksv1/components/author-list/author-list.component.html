@@ -1,0 +1,11 @@
+<div class="card"
+     *ngFor="let author of authors$ | async">
+  <div class="card-body">
+    <p>{{author.lastName}}, {{ author.firstName}}</p>
+    <p>Id: {{author.id}}</p>
+  </div>
+  <div class="card-footer">
+    <a (click)="remove(author)"
+       class="card-link"><small>Remove {{author.lastName}}, {{ author.firstName }}</small></a>
+  </div>
+</div>

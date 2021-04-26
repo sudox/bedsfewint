@@ -1,0 +1,26 @@
+<h4 *ngIf="!(authorFilter$ | async)">All Books</h4>
+<h4 *ngIf="authorFilter$ | async">Books By {{ authorFilter$ | async}}</h4>
+<div *ngIf="authorFilter$ | async">
+  <a class="btn btn-primary"
+     [routerLink]="['../list']">Clear Filter</a>
+</div>
+<div class="card book-list-item"
+     *ngFor="let book of books$ | async">
+  <div class="card-header">
+    <p class="card-title">{{book.title}} by {{book.author}}</p>
+    <p class="card-subtitle">ISBN: {{book.isbn}}</p>
+  </div>
+
+  <div class="card-footer">
+    <a class="card-link"
+       *ngIf="!((authorFilter$ | async) === book.author)"
+       [routerLink]="['../list']"
+       [queryParams]="{author: book.author}">See books by {{book.author}}</a>
+    <a class="card-link">See reviews for by {{book.title}}</a>
+  </div>
+</div>
+
+<div *ngIf="authorFilter$ | async">
+  <a class="btn btn-primary"
+     [routerLink]="['../list']">Clear Filter</a>
+</div>

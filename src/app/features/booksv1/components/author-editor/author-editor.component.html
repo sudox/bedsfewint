@@ -1,0 +1,25 @@
+<div class="form-group">
+  <input class="form-control"
+         #authorId>
+  <button class="btn btn-success"
+          (click)="setAuthor(authorId.value)">Look Up</button>
+</div>
+
+
+<pre>
+{{ author$ | async | json }}
+</pre>
+<div *ngIf="(author$ | async)">
+  <div class="form-group">
+    <button (click)="delete()"
+            class="btn btn-danger">Delete</button>
+  </div>
+  <div class="form-group">
+    <label for="">New First Name</label>
+    <input type="text"
+           class="form-control"
+           #newFirstName>
+    <button (click)="updateFirstName(newFirstName.value)"
+            class="btn btn-primary">Update</button>
+  </div>
+</div>

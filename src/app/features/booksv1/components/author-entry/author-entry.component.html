@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-2">
+    <app-author-list></app-author-list>
+  </div>
+  <div class="col">
+    <form [formGroup]="form"
+          (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <input class="form-control"
+               type="text"
+               name="FirstName"
+               formControlName="firstName">
+        <div class="alert alert-danger"
+             *ngIf="firstName.errors && (firstName.touched || firstName.dirty)">
+          First Name is Required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input class="form-control"
+               type="text"
+               name="LastName"
+               formControlName="lastName">
+        <div class="alert alert-danger"
+             *ngIf="lastName.errors && (lastName.touched || lastName.dirty)">
+          Last Name is Required
+        </div>
+      </div>
+      <button type="submit"
+              class="btn btn-primary">Add Author</button>
+    </form>
+    <markdown src="assets/app-authors-unique.md"></markdown>
+  </div>
+</div>

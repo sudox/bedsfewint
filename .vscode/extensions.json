@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "angular.ng-template",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "ecmel.vscode-html-css",
+    "johnpapa.vscode-peacock",
+    "mariusalchimavicius.json-to-ts"
+  ]
+}

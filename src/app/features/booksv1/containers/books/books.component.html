@@ -1,0 +1,25 @@
+<h3>The Books</h3>
+<ng-container *ngIf="booksLoaded$ | async">
+  <ul class="nav justify-content-center">
+
+    <li class="nav-item">
+      <a class="nav-link"
+         [routerLink]="['list']"
+         [routerLinkActive]="['active']">List</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link"
+         [routerLink]="['entry']"
+         [routerLinkActive]="['active']">Entry</a>
+    </li>
+  </ul>
+
+  <router-outlet></router-outlet>
+</ng-container>
+
+<ng-container *ngIf="!(booksLoaded$ |async)">
+  <h3>Loading Your Books</h3>
+  <img src="/assets/loader.gif"
+       alt="">
+</ng-container>

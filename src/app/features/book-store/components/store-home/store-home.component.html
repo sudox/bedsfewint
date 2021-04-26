@@ -1,0 +1,26 @@
+<header>
+  <h3>Welcome to the Store</h3>
+</header>
+<section *ngIf="loaded$ | async">
+  <div class="card">
+    <div class="card-header">
+      About our Store
+    </div>
+    <div class="card-body">
+      <p>We are a fake online bookstore! But hey, it took Bezos <em>years</em> before he became profitable.</p>
+      <p>We have {{ (model$ | async)?.numberOfBooks}} Books by {{ (model$ | async)?.numberOfAuthors}} Authors.</p>
+    </div>
+    <div class="card-footer">
+      <a class="card-link"
+         [routerLink]="['../','books']">See Our Books</a>
+      <a class="card-link">See Our Authors</a>
+      <a class="card-link">See Your Cart</a>
+    </div>
+  </div>
+</section>
+<pre>
+  For Home:
+  {{ links$ | async | json}}
+  All Links:
+  {{linksb$ | async | json}}
+</pre>
